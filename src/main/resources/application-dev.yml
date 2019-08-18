@@ -1,0 +1,10 @@
+nevermore:
+  resourceHost: http://161.117.15.122:${server.port}/resource
+  resource:
+    dir: /opt/files/
+
+spring:
+  resources:
+    static-locations: file://${nevermore.resource.dir}/
+  mvc:
+    static-path-pattern: /resources/**

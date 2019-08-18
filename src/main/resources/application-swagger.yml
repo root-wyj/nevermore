@@ -1,0 +1,6 @@
+nevermore:
+  resourceHost: http://161.117.15.122:${server.port}/resources
+  resource:
+    dir: /opt/files/
+server:
+  port: 22222
