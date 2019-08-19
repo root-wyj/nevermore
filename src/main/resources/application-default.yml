@@ -1,0 +1,10 @@
+nevermore:
+  resourceHost: http://localhost:${server.port}/resources
+  resource:
+    dir: /Users/wuyingjie/wyj/nevermore/files
+
+spring:
+  resources:
+    static-locations: file://${nevermore.resource.dir}/
+  mvc:
+    static-path-pattern: /resources/**
