@@ -96,8 +96,8 @@ public class OperVideoController {
         return ApiResultVo.buildSuccess(videoService.update(video) > 1);
     }
 
-    @GetMapping
-    public ApiResultVo<List<Video>> list(@RequestParam("query")OperVideoQueryVo queryVo) {
+    @GetMapping("/list")
+    public ApiResultVo<List<Video>> list(OperVideoQueryVo queryVo) {
         log.info("OperVideoController.list|oper list. query:{}", JSON.toJSONString(queryVo));
         return ApiResultVo.buildSuccess(videoService.operQuery(queryVo));
     }

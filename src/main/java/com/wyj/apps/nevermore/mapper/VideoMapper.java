@@ -26,7 +26,7 @@ public interface VideoMapper extends IMapper<Video> {
     @Select("<script> SELECT " + COLUMNS + " FROM " + TABLE_NAME +
             " WHERE 1=1 " +
             " <if test=\"query.categoryId != null\">and video_category_id=#{query.categoryId}</if>" +
-            " <if test=\"query.name != null\">and video_name like concat('%', #{query.categoryId}, '%')</if>" +
+            " <if test=\"query.name != null\">and video_name like concat('%', #{query.name}, '%')</if>" +
             " order by ${query.orderBy} ${query.order}" +
             "</script>")
     List<Video> queryOper(@Param("query") OperVideoQueryVo queryVo);
