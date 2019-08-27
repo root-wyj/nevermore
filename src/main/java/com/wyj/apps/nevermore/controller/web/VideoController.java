@@ -7,10 +7,7 @@ import com.wyj.apps.nevermore.model.vo.AppVideoQueryVo;
 import com.wyj.apps.nevermore.model.vo.VideoVo;
 import com.wyj.apps.nevermore.service.VideoService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -31,9 +28,11 @@ public class VideoController {
     @Resource
     VideoService videoService;
 
-    @GetMapping("/list/{id}")
-    public ApiResultVo<List<VideoVo>> list(@PathVariable("id") Long id) {
+    @GetMapping("/list")
+    public ApiResultVo<List<VideoVo>> list(@RequestParam(name = "id", required = false) Long id,
+                                           @RequestParam(name = "pageSize", required = false, defaultValue = "20")int pageSize) {
         AppVideoQueryVo queryVo = new AppVideoQueryVo();
+        queryVo.setPageSize(pageSize);
         queryVo.setId(id);
         List<Video> videos = videoService.appQuery(queryVo);
         List<VideoVo> ret = new ArrayList<>();

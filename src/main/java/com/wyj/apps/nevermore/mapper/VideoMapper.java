@@ -33,7 +33,7 @@ public interface VideoMapper extends IMapper<Video> {
 
     @Select("<script> SELECT " + COLUMNS + " FROM " + TABLE_NAME +
             " WHERE 1=1 " +
-            " <if test=\"query.id != null\">id &lt; #{query.id}</if>" +
+            " <if test=\"query.id != null\">and id &lt; #{query.id}</if>" +
             " order by id desc" +
             " limit ${query.pageSize}" +
             "</script>")
