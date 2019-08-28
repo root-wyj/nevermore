@@ -19,7 +19,7 @@ spring:
   datasource:
     url: jdbc:mysql://161.117.15.122:3306/nevermore?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&allowMultiQueries=true
     username: root
-    password: 123456
+    password: fuck_hacker
     driver-class-name: com.mysql.jdbc.Driver
     platform: mysql
     type: com.alibaba.druid.pool.DruidDataSource
