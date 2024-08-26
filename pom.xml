@@ -21,7 +21,7 @@
         <mysql.version>5.1.39</mysql.version>
         <mybatis-starter.version>1.3.2</mybatis-starter.version>
         <tk-mybatis-starter.version>2.0.4</tk-mybatis-starter.version>
-        <springfox.version>2.9.2</springfox.version>
+        <springfox.version>2.10.0</springfox.version>
     </properties>
 
     <dependencies>
